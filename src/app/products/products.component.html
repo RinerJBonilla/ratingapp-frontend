@@ -1,0 +1,14 @@
+<br>
+<br>
+<br>
+<div class="card-columns">
+  <div class="card bg-light" *ngFor="let product of productsList">
+      <img class="card-img-top" src="http://localhost:3000/{{product.productImage}}" alt="Card image cap" (click)="onSelect(product)"  routerLink="/productdetail/{{product._id}}">
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text"><small class="text-muted">{{product.votes}}</small></p>
+        <a class="btn btn-primary" (click)="voteThisProduct(product)">Vote</a>
+      </div>
+    </div>
+</div>

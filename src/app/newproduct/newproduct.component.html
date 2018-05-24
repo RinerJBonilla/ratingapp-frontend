@@ -1,18 +1,22 @@
 <br>
 <br>
 <br>
+<!-- event (submit)="create()" will take all the inputs and create a new product with default votes 0-->
 <form align="center" (submit)="create()">
   <div class="form-group">
     <label for="name">Name</label>
+    <!--input text to the value name, using class object newProduct.name-->
     <input type="text" class="form-control" name="name" placeholder="Name of product" [(ngModel)]="newProduct.name">
   </div>
   <div class="form-group">
     <label for="description">Description</label>
+    <!--input text to the value description, using class newProduct.description-->
     <input type="text" class="form-control" name="description" placeholder="About your Product..." [(ngModel)]="newProduct.description">
   </div>
   <label>Upload Image</label>
         <div class="input-group">
             <span class="input-group-btn">
+              <!--input file accept PNG/JPEG only files,when upload will be saved to the variable "Imager", using class Product.productImage (the URL of the photo)-->
                 <span class="btn btn-default btn-file" (change)="uploadFile($event)">
                     Browse… <input type="file" id="Imager" accept="image/*">
                 </span>

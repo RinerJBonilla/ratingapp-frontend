@@ -1,13 +1,18 @@
 <br>
 <br>
 <br>
+<!--this route is only accesible from productdetail on click "Edit" button-->
+<!--Edit form from Products (edit name and description only)-->
+<!--event (Submit)=edithThis() will take what has on inputs and change said product-->
 <form align="center" (submit)="editThis()">
   <div class="form-group">
     <label for="name">Name</label>
+    <!--input text to the value name, using class Product.name-->
     <input type="text" class="form-control" name="name" placeholder="name" [(ngModel)]="product.name">
   </div>
   <div class="form-group">
     <label for="description">Description</label>
+    <!--input text to the value description, using class Product.description-->
     <input type="text" class="form-control" name="description" placeholder="description" [(ngModel)]="product.description">
   </div>
   <button type="submit" class="btn btn-success">Edit</button>

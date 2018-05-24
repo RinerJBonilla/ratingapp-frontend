@@ -1,13 +1,20 @@
 <br>
 <br>
 <br>
+<!--container of multiple products-->
 <div class="card-columns">
+  <!--list of products using cycle *ngFor-->
   <div class="card bg-light" *ngFor="let product of productsList">
+    <!--Productimage of Product-->
       <img class="card-img-top" src="http://localhost:3000/{{product.productImage}}" alt="Card image cap" (click)="onSelect(product)"  routerLink="/productdetail/{{product._id}}">
       <div class="card-body">
+        <!--Name of Product-->
         <h5 class="card-title">{{product.name}}</h5>
+        <!--Description of Product-->
         <p class="card-text">{{product.description}}</p>
+        <!--Votes of Product-->
         <p class="card-text"><small class="text-muted">{{product.votes}}</small></p>
+        <!--Event="voteThisProduct(product)" icreases votes by 1 from selected product-->
         <a class="btn btn-primary" (click)="voteThisProduct(product)">Vote</a>
       </div>
     </div>

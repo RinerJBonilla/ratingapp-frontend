@@ -1,6 +1,7 @@
 <br>
 <br>
 <br>
+<!--Style class creates a shadow gradient under texts-->
 <style>
   h1 {
       color: white;
@@ -11,13 +12,18 @@
       text-shadow: 2px 2px 4px #000000;
   }
 </style>
+<!--container of product-->
 <div align="center">
+  <!--Object card that contains Product's data-->
 <div class="card bg-dark text-white" *ngIf="product" style="max-width: 50rem;">
+  <!--Productimage of Product-->
   <img class="card-img" src="http://localhost:3000/{{product.productImage}}" alt="Card image">
   <div class="card-img-overlay">
+    <!--Name of Product-->
     <h1 style=font-size:160px align="left">{{product.name}}</h1>
     <br>
     <h3 align="left">Description:</h3>
+    <!--Description of Product-->
     <h3 align="left">{{product.description}}</h3>
     <br>
     <br>
@@ -25,25 +31,10 @@
     <br>
     <br>
     <br>
+    <!--event Click="vote this product" increases votes by 1 from selected product-->
     <a class="btn btn-primary" (click)="voteThisProduct(product)">Vote</a>
+    <!--Button Route to the /editproduct page-->
     <a class="btn btn-success" href="/editproduct/{{product._id}}">Edit</a>
-
-    <div ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
-      <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-          <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-      </div>
-      <div class="modal-body" id="modal-body">
-        <h4>Are you sure you want to delete this Product?</h4>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-    </div>
-      </script>
-      <button type="button" class="btn btn-danger" ng-click="$ctrl.open()">Delete</button>
-    </div>
-
   </div>
 </div>
 </div>

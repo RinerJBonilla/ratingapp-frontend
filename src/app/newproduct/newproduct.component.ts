@@ -17,6 +17,7 @@ export class NewproductComponent implements OnInit {
 
   public newProduct: Product = new Product();
   formData = new FormData();
+  promiseSetBySomeAction
 
   ngOnInit() {
     this.newProduct = new Product();
@@ -25,6 +26,9 @@ export class NewproductComponent implements OnInit {
   uploadFile(event){
     let elem = event.target;
     if(elem.files.length>0){
+      this.promiseSetBySomeAction = new Promise((resolve, reject) => {
+        setTimeout(resolve, 2000);
+      });
       console.log(elem.files[0]);
       this.formData.append('Imager',elem.files[0]);
     }

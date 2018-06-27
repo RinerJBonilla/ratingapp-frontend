@@ -4,7 +4,7 @@ import { ProductService } from './services/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule} from '@angular/http';
-
+import {Angular2PromiseButtonModule} from 'angular2-promise-buttons/dist';
 import { AppComponent } from './app.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -29,6 +29,7 @@ import { EditproductComponent } from './editproduct/editproduct.component';
     HttpClientModule,
     FormsModule,
     HttpModule,
+    Angular2PromiseButtonModule.forRoot(),
     NgbModule.forRoot(),
     AppRoutingModule
   ],

@@ -24,5 +24,5 @@
             <input type="text" class="form-control" readonly>
         </div>
         <img id='img-upload'/>
-  <button type="submit" class="btn btn-primary">Upload</button>
+        <button type="submit" class="btn btn-primary" (click)="create()" [promiseBtn]="promiseSetBySomeAction">Upload</button>
 </form>

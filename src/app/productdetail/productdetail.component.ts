@@ -11,6 +11,7 @@ import Product from './../models/product.model';
 })
 export class ProductdetailComponent implements OnInit {
   @Input() product: Product;
+  massage: String;
 
 
   constructor(
@@ -33,6 +34,17 @@ export class ProductdetailComponent implements OnInit {
     this.productService.voteProduct(product)
     .subscribe(products => {
       Object.assign(this.product,products);
+    });
+  }
+
+  deleteThisProduct(id: string){
+    this.productService.deleteProduct(id)
+    .subscribe( response => {
+      this.massage = response.message;
+      window.location.href=`/products`;
+    },
+    error => {
+      console.error(error);
     });
   }
 
